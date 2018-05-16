@@ -111,8 +111,9 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 	public void tearDown()	{ 
 		logger = report.createTest(  "LogOut SC "); 
 		logger.assignCategory("Adding New PriceRules"); 
-		Login login =  PageFactory.initElements(driver, Login.class); logger.log(Status.INFO,  "Logout the application "); 
-		login.logOut(); Helper.captureScreenshot(driver,"SuccesFully Logout SC");
+		login =  PageFactory.initElements(driver, Login.class); 
+		logger.log(Status.INFO,  "Logout the application "); 
+		login.logOut();
 		BrowserFactory.closeBrowser(driver);
         logger.log(Status.INFO, "Closing the Browser");
   
