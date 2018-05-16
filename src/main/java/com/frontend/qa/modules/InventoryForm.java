@@ -11,9 +11,8 @@ import com.database.Database;
 
 
 public class InventoryForm {
-	WebDriver driver;
-	Database databse = new Database();
-	public InventoryForm(WebDriver ldriver) {
+	  WebDriver driver;
+	 public InventoryForm(WebDriver ldriver) {
 		this.driver = ldriver;
 	}
 
@@ -36,7 +35,7 @@ public class InventoryForm {
 		String Query = "select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-RENAULT' "
 				+ "and dealerid='VNC4491'  and location='Annemasse'and inventory_type='NEW' and source_make='RENAULT'"
 				   + " and status='ACTV'";
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -54,7 +53,7 @@ public class InventoryForm {
 		String Query = "select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-RENAULT' "
 				+ "and dealerid='VNC4490'  and location='Thonon Renault'and inventory_type='NEW' and source_make='RENAULT'"
 				   + " and status='ACTV'";
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -73,7 +72,7 @@ public class InventoryForm {
 				+ " dealerid='VNC4491'  and location='ANNEMASSE' and inventory_type='NEW' and make='RENAULT'"
 				+ " and model='CAPTUR NOUVEAU' and trim ='Intens Captur TCe 90 Energy 5 Portes' and  status='ACTV'";
 	
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -93,7 +92,7 @@ public class InventoryForm {
 				+ " dealerid='VNC4491'  and location='ANNEMASSE' and inventory_type='NEW' and make='RENAULT'"
 			+ " and model='CLIO IV' and   status='ACTV'";
 	
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -114,7 +113,7 @@ public class InventoryForm {
 		String Query ="select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-CITROEN' "
 		+ "and dealerid='SADAL CITROËN ANNECY'  and location='SEYNOD' and inventory_type='NEW' and status='ACTV'";
 	
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -131,7 +130,7 @@ public class InventoryForm {
 		String Query ="select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-CITROEN' "
 				+ "and dealerid='SADAL CITROËN ANNECY'  and location='SEYNOD' and inventory_type='NEW' and status='ACTV'";
 			
-				ResultSet data = databse.getData(Query);
+				ResultSet data = Database.getData(Query);
 				boolean firstData = data.next();
 				String ID = "";
 				if (firstData) {
@@ -149,7 +148,7 @@ public class InventoryForm {
 		String Query = "select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-RENAULT' "
 				+ "and dealerid='VNC4491'  and location='Annemasse'and inventory_type='NEW' and source_make='RENAULT'"
 				   + " and status='ACTV'";
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -166,7 +165,7 @@ public class InventoryForm {
 		String Query ="select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-CITROEN' "
 				+ "and dealerid='SADAL CITROËN ANNECY'  and location='SEYNOD' and inventory_type='NEW' and status='ACTV'";
 			
-				ResultSet data = databse.getData(Query);
+				ResultSet data = Database.getData(Query);
 				boolean firstData = data.next();
 				String ID = "";
 				if (firstData) {
@@ -184,7 +183,7 @@ public class InventoryForm {
 		String Query ="select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-CITROEN' "
 		+ "and dealerid='SADAL CITROËN ANNECY'  and location='SEYNOD' and inventory_type='NEW' and status='ACTV'";
 	
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {

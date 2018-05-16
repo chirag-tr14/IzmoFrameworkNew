@@ -6,8 +6,9 @@ import com.izmo.qa.testdata.ExcelDataProvider;
 public class DataproviderFactory
 
 {
+	static ConfigDataProvider config = new ConfigDataProvider();
+	
 	public static ConfigDataProvider getConfig() {
-		ConfigDataProvider config = new ConfigDataProvider();
 		return config;
 	}
 	

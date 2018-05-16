@@ -8,24 +8,35 @@ import java.sql.Statement;
 
 public class Database {
 
-	public Connection conn;
-	public Statement stmt;
+	public static Connection conn;
 
-	public Statement getStatements() throws SQLException, ClassNotFoundException {
-		// For credentials
-		Class.forName("com.mysql.jdbc.Driver");
-		String userName = "rajesh.n";
-		String passWord = "ra&95$sHe2N5";
-		// connection driver
-		conn = DriverManager.getConnection("jdbc:mysql://idbw:3306/izmoweb_r1v2", userName, passWord);
-		stmt = conn.createStatement();
-		return stmt;
+	private static Statement getStatements() throws SQLException, ClassNotFoundException {
+		if (conn == null || conn.isClosed()) {
+			// For credentials
+			Class.forName("com.mysql.jdbc.Driver");
+			String userName = "rajesh.n";
+			String passWord = "ra&95$sHe2N5";
+			// connection driver
+			conn = DriverManager.getConnection("jdbc:mysql://idbw:3306/izmoweb_r1v2", userName, passWord);
+		}
+		return conn.createStatement();
 	}
 
-	public ResultSet getData(String query) throws SQLException, ClassNotFoundException {
+	public static ResultSet getData(String query) throws SQLException, ClassNotFoundException {
 		ResultSet data = getStatements().executeQuery(query);
 		return data;
 	}
 
+	public void closeConnection() {
+		try {
+			if (conn != null && !conn.isClosed()) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }
-//db.url=jdbc:mysql://idbw/izmoweb_r1v2?useOldAliasMetadataBehavior=true&characterEncoding=utf8
+// db.url=jdbc:mysql://idbw/izmoweb_r1v2?useOldAliasMetadataBehavior=true&characterEncoding=utf8

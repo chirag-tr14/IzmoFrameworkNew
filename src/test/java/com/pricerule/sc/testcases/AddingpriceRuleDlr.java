@@ -21,17 +21,18 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 
 {
 	
-	private WebDriver driver;
+	WebDriver driver;
+	 Login login;
+	private PriceruleDealer Invt;
 
 	@Test(priority = 1)
 	public void loginSc() throws IOException {
 		logger = report.createTest("Login SC");
 		logger.assignCategory("Adding New PriceRules");
 		driver = DataproviderFactory.browser().browserName();
-		// driver = BrowserFactory.getBrowser("chrome");
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getConfig().euroApplicationUrl());
-		Login login = PageFactory.initElements(driver, Login.class);
+		login = PageFactory.initElements(driver, Login.class);
 		login.loginApplication(DataproviderFactory.getExcel().getData("Sheet1", 1, 0),
 				DataproviderFactory.getExcel().getData("Sheet1", 1, 1));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -48,8 +49,8 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 	public void tradeinDiscount() {
 		logger = report.createTest("Adding Tradein Discount");
 		logger.assignCategory("Adding New PriceRules");
-		Login login = PageFactory.initElements(driver, Login.class);
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		login = PageFactory.initElements(driver, Login.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		login.selectDealer();
 		login.searchDealerRenault(DataproviderFactory.getExcel().getData("Sheet2", 1, 0));
@@ -63,7 +64,7 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 	public void dealerDiscount() {
 		logger = report.createTest("Adding Dealer Discount");
 		logger.assignCategory("Adding New PriceRules");
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
 		Invt.manageInventory();
 		String priceUrl = driver.getTitle();
 		Assert.assertTrue(priceUrl.contains(priceUrl));
@@ -79,7 +80,7 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 		logger = report.createTest("Adding OEM Discount"); 
 		logger.assignCategory("Adding New PriceRules");
 		Login  login = PageFactory.initElements(driver, Login.class);
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class); // Selecting Dealer
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class); // Selecting Dealer
         login.selectDealer(); 
         logger.log(Status.INFO,"Clicking Select Organization Button");
         login.searchDealerCitroen(DataproviderFactory.getExcel().getData("Sheet2", 3,0));
@@ -94,7 +95,7 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 	public void greenDiscount() {
 		logger = report.createTest("Adding Green Discount");
 		logger.assignCategory("Adding New PriceRules");
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
 		Invt.manageInventory();
 		String priceUrl = driver.getTitle();
 		Assert.assertTrue(priceUrl.contains(priceUrl));

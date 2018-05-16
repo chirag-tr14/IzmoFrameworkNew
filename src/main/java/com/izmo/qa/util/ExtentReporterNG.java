@@ -16,6 +16,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.izmo.qa.factory.DataproviderFactory;
 
 public class ExtentReporterNG {
 
@@ -50,6 +51,7 @@ public class ExtentReporterNG {
 		htmlReporter.config().setDocumentTitle(" PriceRule Report");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
+				
 	}
 
 	@AfterMethod

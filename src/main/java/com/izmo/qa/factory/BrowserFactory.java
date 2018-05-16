@@ -8,21 +8,19 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
 public class BrowserFactory
 
 {
 	static WebDriver driver;
-    
+
 	private static String browser = DataproviderFactory.getConfig().browserName();
-	//public static WebDriver getBrowser(String browserName) {
-	
-	 public WebDriver browserName(){
+	// public static WebDriver getBrowser(String browserName) {
+
+	public WebDriver browserName() {
 		if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", DataproviderFactory.getConfig().getFirefoxPath());
 			driver = new FirefoxDriver();
-		}
-		else if (browser.equalsIgnoreCase("chrome")) {
+		} else if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", DataproviderFactory.getConfig().getChromePath());
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("disable-infobars");
@@ -32,8 +30,7 @@ public class BrowserFactory
 			options.addArguments("--test-type");
 			options.addArguments("--ignore-certificate-errors");
 			driver = new ChromeDriver(options);
-		}
-		else if (browser.equalsIgnoreCase("ie")) {
+		} else if (browser.equalsIgnoreCase("ie")) {
 			System.setProperty("webdriver.edge.driver", DataproviderFactory.getConfig().getIePath());
 			driver = new EdgeDriver();
 		}
@@ -42,8 +39,6 @@ public class BrowserFactory
 		return driver;
 	}
 
-	
-	
 	public static void closeBrowser(WebDriver ldriver) {
 		ldriver.quit();
 	}

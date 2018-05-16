@@ -17,8 +17,9 @@ import com.izmo.qa.util.Helper;
 
 public class FrontEndInActivePriceRule extends ExtentReporterNG {
 
-	WebDriver driver;
-
+	private WebDriver driver;
+	private InventoryForm form;
+	
 	@Test(priority = 19)
 	public void expiredPriceRule() throws ClassNotFoundException, SQLException {
 		logger = report.createTest("Expired Price Rule");
@@ -28,7 +29,7 @@ public class FrontEndInActivePriceRule extends ExtentReporterNG {
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getExcel().getData("Sheet4", 2, 0));
 		logger.log(Status.INFO, "Opening Front End URL");
-		InventoryForm form = PageFactory.initElements(driver, InventoryForm.class);
+		form = PageFactory.initElements(driver, InventoryForm.class);
 		form.citroenExpiredpriceRuleValue();
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 		logger.log(Status.INFO, "Calling priceRuleMethod");
@@ -47,7 +48,7 @@ public class FrontEndInActivePriceRule extends ExtentReporterNG {
 		logger.log(Status.INFO, "BrowserLaunch");
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getExcel().getData("Sheet4", 1, 0));
-		InventoryForm form = PageFactory.initElements(driver, InventoryForm.class);
+		form = PageFactory.initElements(driver, InventoryForm.class);
 		form.inactivepriceRuleValue();
 		logger.log(Status.INFO, "Calling priceRuleMethod");
 		Helper.captureScreenshot(driver, "InActive Price Value not Captured in Front End");
@@ -63,7 +64,7 @@ public class FrontEndInActivePriceRule extends ExtentReporterNG {
 		logger.log(Status.INFO, "BrowserLaunch");
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getExcel().getData("Sheet4", 3, 0));
-		InventoryForm form = PageFactory.initElements(driver, InventoryForm.class);
+		form = PageFactory.initElements(driver, InventoryForm.class);
 		form.withousIsPrimary();
 		// driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 		Helper.captureScreenshot(driver, "Price Rule is not Applying without isPrimary");
@@ -79,7 +80,7 @@ public class FrontEndInActivePriceRule extends ExtentReporterNG {
 		logger.log(Status.INFO, "BrowserLaunch");
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getExcel().getData("Sheet4", 2, 0));
-		InventoryForm form = PageFactory.initElements(driver, InventoryForm.class);
+		form = PageFactory.initElements(driver, InventoryForm.class);
 		form.deletecitroenpriceRuleValue();
 		Helper.captureScreenshot(driver, "Deleted Price Value not Captured in Front End");
 		logger.log(Status.PASS, "Deleted price Rule Value Not Capture for  respective  vehicles");

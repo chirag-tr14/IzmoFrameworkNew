@@ -19,8 +19,8 @@ import com.sc.qa.modules.PriceruleDealer;
 
 public class ExpiredpriceRule extends ExtentReporterNG {
 	WebDriver driver;
-	Database databse = new Database();
-
+	Login login;
+	PriceruleDealer Invt;
 	@Test(priority = 13)
 	public void loginSc() {
 		logger = report.createTest(("Login SC"));
@@ -28,7 +28,7 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 		driver = DataproviderFactory.browser().browserName();
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getConfig().euroApplicationUrl());
-		Login login = PageFactory.initElements(driver, Login.class);
+		login = PageFactory.initElements(driver, Login.class);
 		login.loginApplication(DataproviderFactory.getExcel().getData("Sheet1", 1, 0),
 				DataproviderFactory.getExcel().getData("Sheet1", 1, 1));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -44,7 +44,7 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 		logger.assignCategory("Expired and InActive PriceRules");
 		String Query = "select *from inventory_price_rules where level='DLR' and fk_dealer_id=102878 and "
 				+ "inv_provider='IZMOVN-PGA-CITROEN' and  status='ACTV'";
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -52,8 +52,8 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 			// System.out.println(ID);
 		}
 
-		Login login = PageFactory.initElements(driver, Login.class);
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		login = PageFactory.initElements(driver, Login.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
 		login.selectDealer();
 		login.searchDealerCitroen(DataproviderFactory.getExcel().getData("Sheet2", 3, 0));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -68,13 +68,12 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 
 	}
 
-	@Test(enabled=false)
-	//@Test(priority = 15)
+	@Test(priority = 15)
 	public void inactivePriceRule() throws ClassNotFoundException, SQLException {
 		logger = report.createTest("InActive Dealer Discount for Renault Dealer");
 		logger.assignCategory("Expired and InActive PriceRules");
 		String Query = "select *from inventory_price_rules where level='DLR' and fk_dealer_id=103209 and status='ACTV' ";
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -82,7 +81,7 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 			System.out.println(ID);
 		}
 		Login login = PageFactory.initElements(driver, Login.class);
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
 		login.selectDealer();
 		login.searchDealerRenault((DataproviderFactory.getExcel().getData("Sheet2", 1, 0)));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -96,8 +95,8 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 		driver.get(DataproviderFactory.getExcel().getData("Sheet5", 1, 0));
 	}
 
-	@Test(enabled=false)
-	//@Test(priority = 16)
+
+	@Test(priority = 16)
 	public void deletePriceRule() throws ClassNotFoundException, SQLException {
 		logger = report.createTest("Delete GreenDiscount for Citroen Dealer");
 		logger.assignCategory("Expired and InActive PriceRules");
@@ -112,13 +111,13 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 
 	}
 
-	@Test(enabled=false)
-	//@Test(priority = 17) // Adding Price Rule Without is primary for Citroen Dealer
+
+	@Test(priority = 17) // Adding Price Rule Without is primary for Citroen Dealer
 	public void withouisPrimary() {
 		logger = report.createTest("Adding PriceRule  Without is Primary Dealer BackEnd ");
 		logger.assignCategory("Expired and InActive PriceRules");
-		Login login = PageFactory.initElements(driver, Login.class);
-		PriceruleDealer Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		login = PageFactory.initElements(driver, Login.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
 		login.selectDealer();
 		login.searchDealerCitroen(DataproviderFactory.getExcel().getData("Sheet2", 4, 0));
 		Invt.manageInventory();
@@ -127,12 +126,12 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 		driver.get(DataproviderFactory.getExcel().getData("Sheet5", 1, 0));
 	}
 
-	@Test(enabled=false)
-	//@Test(priority = 18)
+	
+	@Test(priority = 18)
 	public void tearDown1() {
 		logger = report.createTest("Logout SC ");
 		logger.assignCategory("Expired and InActive PriceRules");
-		Login login = PageFactory.initElements(driver, Login.class);
+		login = PageFactory.initElements(driver, Login.class);
 		login.logOut();
 		Helper.captureScreenshot(driver, "Logout SC");
 		logger.log(Status.INFO, "Logout the application ");

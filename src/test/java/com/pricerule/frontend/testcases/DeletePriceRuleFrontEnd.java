@@ -1,6 +1,5 @@
 /*package com.pricerule.frontend.testcases;
-
-
+ bhcxbncvnb
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +25,7 @@ public class DeletePriceRuleFrontEnd {
 	@BeforeMethod
 	public void renaultpriceRuleDlr() {
 		report1 = new ExtentReports(".\\Reports\\FrontEndPriceRuleAdd.html", true);
-		logger1 = report1.startTest("This page Verifies Fron end  Price Rule");
+		logger1 = report1.startTest("This page Verifies Front end  Price Rule");
 		driver = BrowserFactory.getBrowser("chrome");
 		logger1.log(LogStatus.INFO, "BrowserLaunch");
 		driver.manage().deleteAllCookies();

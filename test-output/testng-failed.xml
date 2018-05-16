@@ -3,14 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pricerule.sc.testcases.ExpiredpriceRule">
+      <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr">
         <methods>
+          <include name="dealerDiscount"/>
+          <include name="loginSc"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="greenDiscount"/>
           <include name="getResult"/>
-          <include name="expiredDatePriceRule"/>
+          <include name="oemDiscount"/>
+          <include name="tradeinDiscount"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.pricerule.sc.testcases.ExpiredpriceRule -->
+      </class> <!-- com.pricerule.sc.testcases.AddingpriceRuleDlr -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -16,7 +16,8 @@ import com.izmo.qa.util.Helper;
 public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 
 	private WebDriver driver;
-
+	private InventoryForm form;
+	
 	@BeforeMethod
 	public void citroenpriceRuleDlr() {
 		logger = report.createTest("Navigate to Citroen Dlr New Inventory Page");
@@ -26,6 +27,7 @@ public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 		logger.log(Status.INFO, "BrowserLaunch");
 		driver.manage().deleteAllCookies();
 		driver.get(DataproviderFactory.getExcel().getData("Sheet4", 2, 0));
+		form = PageFactory.initElements(driver, InventoryForm.class);
 		logger.log(Status.INFO, "Navigate to Citroen Dlr New Inventory Page");
 		Helper.captureScreenshot(driver, "Citroen Dealer New Inventory Page");
 
@@ -35,7 +37,6 @@ public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 	public void withPriceRule() throws ClassNotFoundException, SQLException {
 		logger = report.createTest("Applied OEM and Green Discount");
 		logger.assignCategory("Adding New PriceRules");
-		InventoryForm form = PageFactory.initElements(driver, InventoryForm.class);
 		form.citroenpriceRuleValue();
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 		logger.log(Status.INFO, "Calling priceRuleMethod");
