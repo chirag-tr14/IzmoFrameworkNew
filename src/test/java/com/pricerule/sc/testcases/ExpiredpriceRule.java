@@ -34,8 +34,7 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		logger.log(Status.INFO, "Application is up and running");
 		logger.log(Status.INFO, "Welcome to site Admin");
-		Helper.captureScreenshot(driver, "SuccesFully Login SC");
-
+		
 	}
 
 	@Test(priority = 14)
@@ -133,7 +132,7 @@ public class ExpiredpriceRule extends ExtentReporterNG {
 		logger.assignCategory("Expired and InActive PriceRules");
 		login = PageFactory.initElements(driver, Login.class);
 		login.logOut();
-		Helper.captureScreenshot(driver, "Logout SC");
+		//Helper.captureScreenshot(driver, "Logout SC");
 		logger.log(Status.INFO, "Logout the application ");
 		BrowserFactory.closeBrowser(driver);
 		logger.log(Status.INFO, "Closing the Browser");
