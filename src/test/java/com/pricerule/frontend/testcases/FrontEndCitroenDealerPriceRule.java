@@ -2,20 +2,16 @@ package com.pricerule.frontend.testcases;
 
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
 import com.frontend.qa.modules.InventoryForm;
 import com.izmo.qa.factory.BrowserFactory;
 import com.izmo.qa.factory.DataproviderFactory;
 import com.izmo.qa.util.ExtentReporterNG;
 import com.izmo.qa.util.Helper;
-
-
 
 public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 
