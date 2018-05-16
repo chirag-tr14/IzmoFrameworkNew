@@ -77,6 +77,6 @@ public class DeletePriceRuleFrontEnd {
 		logger1.log(LogStatus.PASS, "Price rule value is  captured for respective  vehicles");
 
 	}
-
+	
 }
 */
