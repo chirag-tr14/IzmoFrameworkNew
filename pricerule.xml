@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PriceRule">
+  <test name="AddPriceRule">
+    <classes>
+    <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr"/>
+     <class name="com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule"/>
+     <class name="com.pricerule.frontend.testcases.FrontEndRenaultDealerPriceRule"/>
+     <class name="com.pricerule.sc.testcases.ExpiredpriceRule"/>
+     <class name="com.pricerule.frontend.testcases.FrontEndInActivePriceRule"/>
+      
+    </classes>
+  </test> <!-- AddPriceRule -->
+</suite> <!-- PriceRule -->

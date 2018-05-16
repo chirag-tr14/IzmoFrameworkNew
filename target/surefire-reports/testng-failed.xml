@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [PriceRule]">
+  <test thread-count="5" verbose="0" name="AddPriceRule(failed)">
+    <classes>
+      <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr">
+        <methods>
+          <include name="setUp"/>
+          <include name="getResult"/>
+          <include name="tradeinDiscount"/>
+        </methods>
+      </class> <!-- com.pricerule.sc.testcases.AddingpriceRuleDlr -->
+    </classes>
+  </test> <!-- AddPriceRule(failed) -->
+</suite> <!-- Failed suite [PriceRule] -->

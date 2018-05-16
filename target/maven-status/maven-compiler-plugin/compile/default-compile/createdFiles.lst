@@ -1,0 +1,10 @@
+com\izmo\qa\factory\DataproviderFactory.class
+com\izmo\qa\util\Helper.class
+com\izmo\qa\util\ExtentReporterNG.class
+com\database\Database.class
+com\izmo\qa\factory\BrowserFactory.class
+com\frontend\qa\modules\InventoryForm.class
+com\izmo\qa\testdata\ConfigDataProvider.class
+com\sc\qa\modules\Login.class
+com\izmo\qa\testdata\ExcelDataProvider.class
+com\sc\qa\modules\PriceruleDealer.class
