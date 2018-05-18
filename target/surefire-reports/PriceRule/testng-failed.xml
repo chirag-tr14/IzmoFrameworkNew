@@ -3,13 +3,63 @@
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [PriceRule]">
   <test thread-count="5" verbose="0" name="AddPriceRule(failed)">
     <classes>
-      <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr">
+      <class name="com.pricerule.frontend.testcases.FrontEndRenaultDealerPriceRule">
+        <methods>
+          <include name="tradeInDiscountPriceRule"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="getResult"/>
+          <include name="renualtdealerinvtUrl"/>
+          <include name="tradeInDiscountWithOutPriceRule"/>
+          <include name="dealerDiscountMakePriceRule"/>
+          <include name="closeBrowser"/>
+          <include name="dealerDiscountotherMakePriceRule"/>
+        </methods>
+      </class> <!-- com.pricerule.frontend.testcases.FrontEndRenaultDealerPriceRule -->
+      <class name="com.pricerule.sc.testcases.ExpiredpriceRule">
         <methods>
           <include name="setUp"/>
+          <include name="withouisPrimary"/>
+          <include name="tearDown"/>
           <include name="getResult"/>
+          <include name="inactivePriceRule"/>
+          <include name="tearDown1"/>
+          <include name="deletePriceRule"/>
+          <include name="loginSc"/>
+          <include name="expiredDatePriceRule"/>
+        </methods>
+      </class> <!-- com.pricerule.sc.testcases.ExpiredpriceRule -->
+      <class name="com.pricerule.frontend.testcases.FrontEndInActivePriceRule">
+        <methods>
+          <include name="inActivePriceRule"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="getResult"/>
+          <include name="expiredPriceRule"/>
+          <include name="deletedPriceRule"/>
+          <include name="withoutIsPrimary"/>
+        </methods>
+      </class> <!-- com.pricerule.frontend.testcases.FrontEndInActivePriceRule -->
+      <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr">
+        <methods>
+          <include name="dealerDiscount"/>
+          <include name="setUp"/>
+          <include name="greenDiscount"/>
+          <include name="getResult"/>
+          <include name="oemDiscount"/>
           <include name="tradeinDiscount"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.pricerule.sc.testcases.AddingpriceRuleDlr -->
+      <class name="com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="withPriceRule"/>
+          <include name="getResult"/>
+          <include name="citroenpriceRuleDlr"/>
+        </methods>
+      </class> <!-- com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule -->
     </classes>
   </test> <!-- AddPriceRule(failed) -->
 </suite> <!-- Failed suite [PriceRule] -->

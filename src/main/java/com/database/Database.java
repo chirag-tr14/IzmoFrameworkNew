@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.izmo.qa.factory.DataproviderFactory;
+
 public class Database {
 
 	public static Connection conn;
@@ -14,10 +16,14 @@ public class Database {
 		if (conn == null || conn.isClosed()) {
 			// For credentials
 			Class.forName("com.mysql.jdbc.Driver");
-			String userName = "rajesh.n";
-			String passWord = "ra&95$sHe2N5";
-			// connection driver
+			//String userName = "rajesh.n";
+			//String passWord = "ra&95$sHe2N5";
+			String userName=DataproviderFactory.getConfig().databseUserName();
+			String passWord=DataproviderFactory.getConfig().passWord();
+		
+				// connection driver
 			conn = DriverManager.getConnection("jdbc:mysql://idbw:3306/izmoweb_r1v2", userName, passWord);
+		
 		}
 		return conn.createStatement();
 	}

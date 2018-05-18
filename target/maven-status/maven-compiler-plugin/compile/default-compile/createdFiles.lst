@@ -1,5 +1,6 @@
 com\izmo\qa\factory\DataproviderFactory.class
 com\izmo\qa\util\Helper.class
+com\izmo\qa\util\BrokenLinks.class
 com\izmo\qa\util\ExtentReporterNG.class
 com\database\Database.class
 com\izmo\qa\factory\BrowserFactory.class

@@ -2,6 +2,9 @@ package com.sc.qa.modules;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -21,6 +24,14 @@ public class PriceruleDealer
 {
 	WebDriver driver;
 
+	// Create object of SimpleDateFormat class and decide the format
+			 DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy ");
+			 		 //get current date time with Date()
+			 Date date = new Date();
+			 		 // Now format the date
+			 String Cdate= dateFormat.format(date);
+			 		
+	
 	public PriceruleDealer(WebDriver ldriver) {
 		this.driver = ldriver;
 	}
@@ -105,6 +116,7 @@ public class PriceruleDealer
 	@FindBy(xpath = "//li[@id='tab-id-2']//a[text()='Inactive & Expired Rules']")
 	WebElement InExTab;
 
+		
 	public void manageInventory() {
 
 		ivntMgmt.click();
@@ -151,10 +163,9 @@ public class PriceruleDealer
 	}
 
 	public void deletePriceRule() throws ClassNotFoundException, SQLException {
-		Database databse = new Database();
-		String Query = "select *from inventory_price_rules  where level='DLR' and fk_dealer_id=102878 "
+			String Query = "select *from inventory_price_rules  where level='DLR' and fk_dealer_id=102878 "
 				+ " and  discount_by='FLAT'  and status='ACTV'; ";
-		ResultSet data = databse.getData(Query);
+		ResultSet data = Database.getData(Query);
 		boolean firstData = data.next();
 		String ID = "";
 		if (firstData) {
@@ -188,7 +199,9 @@ public class PriceruleDealer
 		provider.selectByValue(DataproviderFactory.getExcel().getData("Sheet3", 1, 2));
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 1, 8));
+		//StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 1, 8));
+		StartDate.sendKeys(Cdate);
+		
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		/*
 		 * JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -240,12 +253,10 @@ public class PriceruleDealer
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Trim.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 3, 7));
-		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 3, 8));
-		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		// EndDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 3,
-		// 9));
-
+		
+		//StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 3, 8));
+		StartDate.sendKeys(Cdate);
+		
 		Select discount = new Select(Discount);
 		discount.selectByValue(DataproviderFactory.getExcel().getData("Sheet3", 3, 10));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -271,7 +282,8 @@ public class PriceruleDealer
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Make.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 2, 5));
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 2, 8));
+		//StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 2, 8));
+		StartDate.sendKeys(Cdate);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Select discount = new Select(Discount);
 		discount.selectByVisibleText(DataproviderFactory.getExcel().getData("Sheet3", 2, 10));
@@ -296,9 +308,9 @@ public class PriceruleDealer
 		provider.selectByValue(DataproviderFactory.getExcel().getData("Sheet3", 4, 2));
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 4, 8));
-		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+		//StartDate.sendKeys(DataproviderFactory.getExcel().getData("Sheet3", 4, 8));
+		StartDate.sendKeys(Cdate);
+		
 		Select discount = new Select(Discount);
 		discount.selectByValue(DataproviderFactory.getExcel().getData("Sheet3", 4, 10));
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

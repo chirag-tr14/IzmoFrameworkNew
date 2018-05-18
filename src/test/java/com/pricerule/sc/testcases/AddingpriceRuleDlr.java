@@ -16,13 +16,12 @@ import com.izmo.qa.util.Helper;
 import com.sc.qa.modules.Login;
 import com.sc.qa.modules.PriceruleDealer;
 
-
 public class AddingpriceRuleDlr extends ExtentReporterNG
 
 {
-	
+
 	WebDriver driver;
-	 Login login;
+	Login login;
 	private PriceruleDealer Invt;
 
 	@Test(priority = 1)
@@ -42,7 +41,8 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 		String Expected = driver.getCurrentUrl();
 		Assert.assertEquals(Actual, Expected);
 		Helper.captureScreenshot(driver, "SuccessFully Login SC");
-
+		
+		
 	}
 
 	@Test(priority = 2)
@@ -58,6 +58,8 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 		Invt.manageInventory();
 		Invt.renaultDlrTradeinDiscount();
 		Helper.captureScreenshot(driver, "SuccesFully Added Trade in Discount");
+		/*DataproviderFactory.setExcel().addColumn("Sheet2", "Status");
+		DataproviderFactory.setExcel().setCellData("Sheet2", "3", 3,"pass");*/
 	}
 
 	@Test(priority = 3)
@@ -72,24 +74,26 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 		Invt.renaultDlrDealerDiscount();
 		Helper.captureScreenshot(driver, "SuccesFully Added Dealer Discount");
 		driver.get(DataproviderFactory.getExcel().getData("Sheet5", 1, 0));
-
+	
 	}
 
 	@Test(priority = 4)
-	public void oemDiscount(){ 
-		logger = report.createTest("Adding OEM Discount"); 
+	public void oemDiscount() {
+		logger = report.createTest("Adding OEM Discount");
 		logger.assignCategory("Adding New PriceRules");
-		Login  login = PageFactory.initElements(driver, Login.class);
-		Invt = PageFactory.initElements(driver, PriceruleDealer.class); // Selecting Dealer
-        login.selectDealer(); 
-        logger.log(Status.INFO,"Clicking Select Organization Button");
-        login.searchDealerCitroen(DataproviderFactory.getExcel().getData("Sheet2", 3,0));
-        logger.log(Status.INFO, "Passed Dealer Name"); // Calling
-        Invt.manageInventory(); logger.log(Status.INFO,"Calling AddPrice Rule Method");
-        Invt.citroentDlrOemDiscount();
-        Helper.captureScreenshot(driver, "SuccesFully Added Oem Discount");
-  
-  }
+		Login login = PageFactory.initElements(driver, Login.class);
+		Invt = PageFactory.initElements(driver, PriceruleDealer.class);
+		// Selecting Dealer
+		login.selectDealer();
+		logger.log(Status.INFO, "Clicking Select Organization Button");
+		login.searchDealerCitroen(DataproviderFactory.getExcel().getData("Sheet2", 3, 0));
+		logger.log(Status.INFO, "Passed Dealer Name"); // Calling
+		Invt.manageInventory();
+		logger.log(Status.INFO, "Calling AddPrice Rule Method");
+		Invt.citroentDlrOemDiscount();
+		Helper.captureScreenshot(driver, "SuccesFully Added Oem Discount");
+	
+	}
 
 	@Test(priority = 5)
 	public void greenDiscount() {
@@ -104,18 +108,18 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 		Invt.citroentDlrGreenDiscount();
 		Helper.captureScreenshot(driver, "SuccesFully Added Green Discount");
 		driver.navigate().to(DataproviderFactory.getExcel().getData("Sheet5", 1, 0));
-
+		
 	}
 
-	@Test(priority = 6) 
-	public void tearDown()	{ 
-		logger = report.createTest(  "LogOut SC "); 
-		logger.assignCategory("Adding New PriceRules"); 
-		login =  PageFactory.initElements(driver, Login.class); 
-		logger.log(Status.INFO,  "Logout the application "); 
+	@Test(priority = 6)
+	public void tearDown() {
+		logger = report.createTest("LogOut SC ");
+		logger.assignCategory("Adding New PriceRules");
+		login = PageFactory.initElements(driver, Login.class);
+		logger.log(Status.INFO, "Logout the application ");
 		login.logOut();
 		BrowserFactory.closeBrowser(driver);
-        logger.log(Status.INFO, "Closing the Browser");
-  
-}
+		logger.log(Status.INFO, "Closing the Browser");
+
+	}
 }

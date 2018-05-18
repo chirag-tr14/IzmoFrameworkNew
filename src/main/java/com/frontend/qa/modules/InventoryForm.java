@@ -172,7 +172,6 @@ public class InventoryForm {
 					ID = data.getString(1);
 					// System.out.println(ID);
 				}
-		
 		SearchField.sendKeys(ID);
 		SubmitButton.click();
 		// PrDropdown.click();

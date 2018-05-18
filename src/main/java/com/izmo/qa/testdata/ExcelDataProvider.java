@@ -2,7 +2,12 @@ package com.izmo.qa.testdata;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -12,17 +17,21 @@ public class ExcelDataProvider {
 	XSSFWorkbook wb;
 	XSSFSheet sheet;
 	XSSFRow row;
+	XSSFCell cell;
+	FileInputStream fis;
+	FileOutputStream fos;
+	File src;
+	XSSFCellStyle style;
 
 	public ExcelDataProvider(String ExcelPath) {
 
 		// File src =new File("./ApplicationTestData/SCLogin.xlsx");
 
-		File src = new File(ExcelPath);
+		src = new File(ExcelPath);
 
 		try {
 
-			FileInputStream fis = new FileInputStream(src);
-
+			fis = new FileInputStream(src);
 			wb = new XSSFWorkbook(fis);
 
 		}
@@ -46,35 +55,90 @@ public class ExcelDataProvider {
 		String data = wb.getSheet(sheetName).getRow(row).getCell(coloumn).getStringCellValue().toString();
 
 		return data;
-
 	}
 
 	public int getRowCount(int Index) {
 		int row = wb.getSheetAt(Index).getPhysicalNumberOfRows();
-		row = row++;
 
+		row = row++;
 		return row;
 
 	}
 
+	public boolean setCellData(String sheetName, String colName, int rowNum, String data) {
+		try {
+			fis = new FileInputStream(src);
+			wb = new XSSFWorkbook(fis);
+			if (rowNum <= 0)
+				return false;
+			int index = wb.getSheetIndex(sheetName);
+			int colNum = -1;
+			if (index == -1)
+				return false;
+			sheet = wb.getSheetAt(index);
+			row = sheet.getRow(0);
+			for (int i = 0; i < row.getLastCellNum(); i++) {
+				// System.out.println(row.getCell(i).getStringCellValue().trim());
+				if (row.getCell(i).getStringCellValue().trim().equals(colName))
+					colNum = i;
+			}
+			if (colNum == -1)
+				return false;
+			sheet.autoSizeColumn(colNum);
+			row = sheet.getRow(rowNum - 1);
+			if (row == null)
+				row = sheet.createRow(rowNum - 1);
+			cell = row.getCell(colNum);
+			if (cell == null)
+				cell = row.createCell(colNum);
+			// cell style
+			// CellStyle cs = wb.createCellStyle();
+			// cs.setWrapText(true);
+			// cell.setCellStyle(cs);
+			cell.setCellValue(data);
+			fos = new FileOutputStream(src);
+			wb.write(fos);
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	public boolean addColumn(String sheetName, String colName) {
+		// System.out.println("**************addColumn*********************");
+		try {
+			fis = new FileInputStream(src);
+			wb = new XSSFWorkbook(fis);
+			int index = wb.getSheetIndex(sheetName);
+			if (index == -1)
+				return false;
+
+			style = wb.createCellStyle();
+			style.setFillForegroundColor(HSSFColor.GREY_40_PERCENT.index);
+			style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+			sheet = wb.getSheetAt(index);
+			row = sheet.getRow(0);
+			if (row == null)
+				row = sheet.createRow(0);
+			// cell = row.getCell();
+			// if (cell == null)
+			// System.out.println(row.getLastCellNum());
+			if (row.getLastCellNum() == -1)
+				cell = row.createCell(0);
+			else
+				cell = row.createCell(row.getLastCellNum());
+			cell.setCellValue(colName);
+			cell.setCellStyle(style);
+			fos = new FileOutputStream(src);
+			wb.write(fos);
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
 }
-/*
- * public String getCellData(String sheetName, String colName,int rownum){ int
- * col_num=0; int index=wb.getSheetIndex(sheetName); sheet=wb.getSheetAt(index);
- * XSSFRow row1=sheet.getRow(0); for(int i=1;i<row1.getLastCellNum(); i++){
- * if(row1.getCell(i).getStringCellValue().equals(colName)) { col_num=i; }
- * 
- * } row1=sheet.getRow(rownum-1);
- * 
- * XSSFCell cell=row1.getCell(col_num);
- * 
- * if(cell.getCellType()==cell.CELL_TYPE_STRING){ return
- * cell.getStringCellValue(); } else if
- * (cell.getCellType()==cell.CELL_TYPE_NUMERIC){ return
- * String.valueOf(cell.getNumericCellValue()); } else if
- * (cell.getCellType()==cell.CELL_TYPE_NUMERIC){ return
- * String.valueOf(cell.getNumericCellValue()); } return null; }
- * 
- * 
- * }
- */

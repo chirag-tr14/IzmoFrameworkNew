@@ -5,14 +5,10 @@
     <classes>
       <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr">
         <methods>
-          <include name="dealerDiscount"/>
-          <include name="loginSc"/>
           <include name="setUp"/>
-          <include name="greenDiscount"/>
-          <include name="getResult"/>
-          <include name="oemDiscount"/>
-          <include name="tradeinDiscount"/>
           <include name="tearDown"/>
+          <include name="getResult"/>
+          <include name="tradeinDiscount"/>
         </methods>
       </class> <!-- com.pricerule.sc.testcases.AddingpriceRuleDlr -->
     </classes>

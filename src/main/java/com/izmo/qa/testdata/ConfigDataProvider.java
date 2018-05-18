@@ -74,4 +74,17 @@ public class ConfigDataProvider
 		return browser;
 	}
 
+	public String databseUserName(){
+		String userName=prop.getProperty("userName");
+		return userName;
+	}
+	
+	public String passWord(){
+		String passWord=prop.getProperty("passWord");
+		return passWord;
+	}
+	
+	
+	
+	
 }

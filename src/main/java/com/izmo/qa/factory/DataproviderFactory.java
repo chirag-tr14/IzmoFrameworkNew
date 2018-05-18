@@ -26,5 +26,9 @@ public class DataproviderFactory
 		ExcelDataProvider formsxcel = new ExcelDataProvider("F:\\IZMO FrameWork\\com.izomweb.com\\ApplicationTestData/ScPages.xlsx");
 		return formsxcel;
 	}
-
+	public static ExcelDataProvider setExcel() {
+		ExcelDataProvider formsxcel = new ExcelDataProvider("F:\\IZMO FrameWork\\com.izomweb.com\\ApplicationTestData\\PriceRuleSceanrios.xlsx");
+		return formsxcel;
+	}
+	
 }
