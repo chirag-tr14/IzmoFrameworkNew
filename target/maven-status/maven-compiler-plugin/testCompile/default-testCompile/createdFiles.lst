@@ -1,8 +1,0 @@
-com\pricerule\frontend\testcases\FrontEndInActivePriceRule.class
-sc\pages\testcases\ContentPage.class
-com\pricerule\frontend\testcases\FrontEndRenaultDealerPriceRule.class
-com\pricerule\frontend\testcases\PriceruleGroup.class
-com\pricerule\frontend\testcases\FrontEndCitroenDealerPriceRule.class
-com\pricerule\sc\testcases\AddingpriceRuleDlr.class
-com\pricerule\sc\testcases\ExpiredpriceRule.class
-sc\front\pages\forms.class
