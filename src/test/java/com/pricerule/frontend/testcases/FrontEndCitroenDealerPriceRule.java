@@ -1,9 +1,12 @@
 package com.pricerule.frontend.testcases;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,6 +15,7 @@ import com.aventstack.extentreports.Status;
 import com.frontend.qa.modules.InventoryForm;
 import com.izmo.qa.factory.BrowserFactory;
 import com.izmo.qa.factory.DataproviderFactory;
+import com.izmo.qa.util.BrokenLinks;
 import com.izmo.qa.util.ExtentReporterNG;
 import com.izmo.qa.util.Helper;
 
@@ -23,7 +27,6 @@ public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 	public void citroenpriceRuleDlr() {
 		logger = report.createTest("Navigate to Citroen Dlr New Inventory Page");
 		logger.assignCategory("Adding New PriceRules");
-		// driver = BrowserFactory.getBrowser("chrome");
 		driver = DataproviderFactory.browser().browserName();
 		logger.log(Status.INFO, "BrowserLaunch");
 		driver.manage().deleteAllCookies();
@@ -31,14 +34,14 @@ public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 		form = PageFactory.initElements(driver, InventoryForm.class);
 		logger.log(Status.INFO, "Navigate to Citroen Dlr New Inventory Page");
 		Helper.captureScreenshot(driver, "Citroen Dealer New Inventory Page");
-		/*
-		 * List<WebElement> links=driver.findElements(By.tagName("a"));
-		 * System.out.println("Total links are "+links.size()); for(int
-		 * i=0;i<links.size();i++) {
-		 * 
-		 * WebElement ele= links.get(i); String url=ele.getAttribute("href");
-		 * BrokenLinks.verifyLinkActive(url); }
-		 */
+		
+		  List<WebElement> links=driver.findElements(By.tagName("a"));
+		  System.out.println("Total links are "+links.size()); for(int
+		  i=0;i<links.size();i++) {
+		  
+		 WebElement ele= links.get(i); String url=ele.getAttribute("href");
+		  BrokenLinks.verifyLinkActive(url); }
+		 
 	}
 
 	@Test(priority = 7)
