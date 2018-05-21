@@ -1,40 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="117224" started-at="2018-05-17T13:51:29Z" finished-at="2018-05-17T13:53:26Z">
+  <suite name="Default suite" duration-ms="370403" started-at="2018-05-18T13:02:18Z" finished-at="2018-05-18T13:08:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="117224" started-at="2018-05-17T13:51:29Z" finished-at="2018-05-17T13:53:26Z">
-      <class name="com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule@e25b2fe]" name="setUp" is-config="true" duration-ms="126" started-at="2018-05-17T13:51:29Z" finished-at="2018-05-17T13:51:29Z">
+    <test name="Default test" duration-ms="370403" started-at="2018-05-18T13:02:18Z" finished-at="2018-05-18T13:08:29Z">
+      <class name="com.pricerule.sc.testcases.AddingpriceRuleDlr">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="setUp" is-config="true" duration-ms="122" started-at="2018-05-18T13:02:18Z" finished-at="2018-05-18T13:02:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="citroenpriceRuleDlr()[pri:0, instance:com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule@e25b2fe]" name="citroenpriceRuleDlr" is-config="true" duration-ms="111188" started-at="2018-05-17T13:51:29Z" finished-at="2018-05-17T13:53:20Z">
+        <test-method status="PASS" signature="loginSc()[pri:1, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="loginSc" duration-ms="18835" started-at="2018-05-18T13:02:18Z" finished-at="2018-05-18T13:02:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- citroenpriceRuleDlr -->
-        <test-method status="PASS" signature="withPriceRule()[pri:7, instance:com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule@e25b2fe]" name="withPriceRule" duration-ms="6010" started-at="2018-05-17T13:53:20Z" finished-at="2018-05-17T13:53:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- withPriceRule -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule@e25b2fe]" name="getResult" is-config="true" duration-ms="9" started-at="2018-05-17T13:53:26Z" finished-at="2018-05-17T13:53:26Z">
+        </test-method> <!-- loginSc -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="getResult" is-config="true" duration-ms="16" started-at="2018-05-18T13:02:37Z" finished-at="2018-05-18T13:02:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=withPriceRule status=SUCCESS method=FrontEndCitroenDealerPriceRule.withPriceRule()[pri:7, instance:com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule@e25b2fe] output={null}]]]>
+                <![CDATA[[TestResult name=loginSc status=SUCCESS method=AddingpriceRuleDlr.loginSc()[pri:1, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule@e25b2fe]" name="tearDown" is-config="true" duration-ms="240" started-at="2018-05-17T13:53:26Z" finished-at="2018-05-17T13:53:27Z">
+        <test-method status="PASS" signature="tradeinDiscount()[pri:2, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="tradeinDiscount" duration-ms="11615" started-at="2018-05-18T13:02:37Z" finished-at="2018-05-18T13:02:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tradeinDiscount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="getResult" is-config="true" duration-ms="2" started-at="2018-05-18T13:02:49Z" finished-at="2018-05-18T13:02:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tradeinDiscount status=SUCCESS method=AddingpriceRuleDlr.tradeinDiscount()[pri:2, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="dealerDiscount()[pri:3, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="dealerDiscount" duration-ms="71958" started-at="2018-05-18T13:02:49Z" finished-at="2018-05-18T13:04:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dealerDiscount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="getResult" is-config="true" duration-ms="0" started-at="2018-05-18T13:04:01Z" finished-at="2018-05-18T13:04:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=dealerDiscount status=SUCCESS method=AddingpriceRuleDlr.dealerDiscount()[pri:3, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="oemDiscount()[pri:4, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="oemDiscount" duration-ms="12353" started-at="2018-05-18T13:04:01Z" finished-at="2018-05-18T13:04:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oemDiscount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="getResult" is-config="true" duration-ms="1" started-at="2018-05-18T13:04:13Z" finished-at="2018-05-18T13:04:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=oemDiscount status=SUCCESS method=AddingpriceRuleDlr.oemDiscount()[pri:4, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="greenDiscount()[pri:5, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="greenDiscount" duration-ms="249925" started-at="2018-05-18T13:04:13Z" finished-at="2018-05-18T13:08:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- greenDiscount -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="getResult" is-config="true" duration-ms="1" started-at="2018-05-18T13:08:23Z" finished-at="2018-05-18T13:08:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=greenDiscount status=SUCCESS method=AddingpriceRuleDlr.greenDiscount()[pri:5, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:6, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="tearDown" duration-ms="5689" started-at="2018-05-18T13:08:23Z" finished-at="2018-05-18T13:08:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec]" name="getResult" is-config="true" duration-ms="0" started-at="2018-05-18T13:08:29Z" finished-at="2018-05-18T13:08:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tearDown status=SUCCESS method=AddingpriceRuleDlr.tearDown()[pri:6, instance:com.pricerule.sc.testcases.AddingpriceRuleDlr@204f30ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+      </class> <!-- com.pricerule.sc.testcases.AddingpriceRuleDlr -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

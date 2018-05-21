@@ -35,12 +35,12 @@ public class FrontEndCitroenDealerPriceRule extends ExtentReporterNG {
 		logger.log(Status.INFO, "Navigate to Citroen Dlr New Inventory Page");
 		Helper.captureScreenshot(driver, "Citroen Dealer New Inventory Page");
 		
-		  List<WebElement> links=driver.findElements(By.tagName("a"));
+		  /*List<WebElement> links=driver.findElements(By.tagName("a"));
 		  System.out.println("Total links are "+links.size()); for(int
 		  i=0;i<links.size();i++) {
 		  
 		 WebElement ele= links.get(i); String url=ele.getAttribute("href");
-		  BrokenLinks.verifyLinkActive(url); }
+		  BrokenLinks.verifyLinkActive(url); }*/
 		 
 	}
 
