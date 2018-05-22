@@ -3,6 +3,7 @@ package com.izmo.qa.testdata;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -65,7 +66,7 @@ public class ExcelDataProvider {
 
 	}
 
-	public boolean setCellData(String sheetName, String colName, int rowNum, String data) {
+	public boolean setCellData(String sheetName, int j, int rowNum, String data) {
 		try {
 			fis = new FileInputStream(src);
 			wb = new XSSFWorkbook(fis);
@@ -79,7 +80,7 @@ public class ExcelDataProvider {
 			row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
 				// System.out.println(row.getCell(i).getStringCellValue().trim());
-				if (row.getCell(i).getStringCellValue().trim().equals(colName))
+				if (row.getCell(i).getStringCellValue().trim().equals(j))
 					colNum = i;
 			}
 			if (colNum == -1)
@@ -105,7 +106,77 @@ public class ExcelDataProvider {
 		}
 		return true;
 	}
+	
+	/*public boolean setCellData(String sheetName, int colNum, int rowNum, String data) {
+		try {
+			fis = new FileInputStream(src);
+			wb = new XSSFWorkbook(fis);
+			if (rowNum <= 0)
+				return false;
+			int index = wb.getSheetIndex(sheetName);
+			if (index == -1){
+				sheet=wb.createSheet(sheetName);
+			}
+			row = sheet.getRow(0);
+			if(row==null){
+				row = sheet.createRow(0);	
+			}
+			sheet.autoSizeColumn(colNum);
+			row = sheet.getRow(rowNum - 1);
+			if (row == null)
+				row = sheet.createRow(rowNum - 1);
+			cell = row.getCell(colNum);
+			if (cell == null)
+				cell = row.createCell(colNum);
+			// cell style
+			// CellStyle cs = wb.createCellStyle();
+			// cs.setWrapText(true);
+			// cell.setCellStyle(cs);
+			cell.setCellValue(data);
+			fos = new FileOutputStream(src);
+			wb.write(fos);
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}*/
+		//return true;
+	//}
+	
+	/*public boolean setCellData(String sheetName, int colNum, int rowNum, List<String> data) {
+		try {
+			fis = new FileInputStream(src);
+			wb = new XSSFWorkbook(fis);
+			if (rowNum <= 0)
+				return false;
+			int index = wb.getSheetIndex(sheetName);
+			if (index == -1) {
+				sheet = wb.createSheet(sheetName);
+			}
+			row = sheet.getRow(0);
+			if (row == null) {
+				row = sheet.createRow(0);
+			}
+			sheet.autoSizeColumn(colNum);
 
+			for (String cellValue : data) {
+				row = sheet.getRow(rowNum - 1);
+				if (row == null)
+					row = sheet.createRow(rowNum - 1);
+				cell = row.getCell(colNum);
+				cell.setCellValue(cellValue);
+				rowNum++;
+			}
+			fos = new FileOutputStream(src);
+			wb.write(fos);
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+*/
 	public boolean addColumn(String sheetName, String colName) {
 		// System.out.println("**************addColumn*********************");
 		try {
@@ -141,4 +212,5 @@ public class ExcelDataProvider {
 		return true;
 	}
 
+	
 }
