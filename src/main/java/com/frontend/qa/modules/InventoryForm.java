@@ -86,7 +86,7 @@ public class InventoryForm {
 	}
 
 	public void otherMakepriceRuleValue() throws ClassNotFoundException, SQLException {
-		SerchRemoveButton.click();
+		//SerchRemoveButton.click();
 		// driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		String Query ="select stocknumber from inventory_master where dsprovider='IZMOVN-PGA-RENAULT' and"
 				+ " dealerid='VNC4491'  and location='ANNEMASSE' and inventory_type='NEW' and make='RENAULT'"
