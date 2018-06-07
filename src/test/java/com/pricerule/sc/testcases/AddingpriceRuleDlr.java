@@ -24,6 +24,7 @@ public class AddingpriceRuleDlr extends ExtentReporterNG
 	Login login;
 	private PriceruleDealer Invt;
 
+	
 	@Test(priority = 1)
 	public void loginSc() throws IOException {
 		logger = report.createTest("Login SC");
