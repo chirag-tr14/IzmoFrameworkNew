@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule">
+      <class name="sc.pages.testcases.ContentPage">
         <methods>
+          <include name="specialPageAdd"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="withPriceRule"/>
           <include name="getResult"/>
-          <include name="citroenpriceRuleDlr"/>
         </methods>
-      </class> <!-- com.pricerule.frontend.testcases.FrontEndCitroenDealerPriceRule -->
+      </class> <!-- sc.pages.testcases.ContentPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
