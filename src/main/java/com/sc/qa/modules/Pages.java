@@ -88,9 +88,14 @@ public class Pages
 	public void contentPage() {
 		ContentPage.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Title.sendKeys(DataproviderFactory.getScPages().getData("TestData", 2, 0));
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Url.sendKeys(DataproviderFactory.getScPages().getData("TestData", 2, 1));
-		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Select Deaprtment = new Select(Departments);
 		Deaprtment.selectByVisibleText(DataproviderFactory.getScPages().getData("TestData", 2, 2));
 		driver.switchTo().frame("idContent_editorobj1");
@@ -103,18 +108,36 @@ public class Pages
 		SavePage.click();
 	}
 
-	public void campaignPage() {
+	public void campaignPage() throws InterruptedException {
 		CampignPage.click();
+		
+		SavePage.click();
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Title.sendKeys(DataproviderFactory.getScPages().getData("TestData", 5, 0));
+		
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Url.sendKeys(DataproviderFactory.getScPages().getData("TestData", 5, 1));
 		
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Select Deaprtment = new Select(Departments);
 		Deaprtment.selectByVisibleText(DataproviderFactory.getScPages().getData("TestData", 5, 2));
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("formCategoryId")));
+		
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
+		
+		Thread.sleep(2000);
 		Select category = new Select(FormCategory);
+		/*WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@name='formCategoryId'][@id='formCategoryId']")));*/
 		category.selectByVisibleText(DataproviderFactory.getScPages().getData("TestData", 5, 3));
+		
+		
 		FormPosition.click();
 		driver.switchTo().frame("idContent_editorobj1");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -126,33 +149,55 @@ public class Pages
 		SavePage.click();
 	}
 
-	public void specialPage() {
+	public void specialPage() throws InterruptedException {
 		SpecialPage.click();
+		SavePage.click();
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Title.sendKeys(DataproviderFactory.getScPages().getData("TestData", 8, 0));
+		
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Url.sendKeys(DataproviderFactory.getScPages().getData("TestData", 8, 1));
+		
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
 		Select Deaprtment = new Select(Departments);
 		Deaprtment.selectByVisibleText(DataproviderFactory.getScPages().getData("TestData", 8, 2));
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@name='formCategoryId'][@id='formCategoryId']")));
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
+		
+		Thread.sleep(2000);
 		Select category = new Select(FormCategory);
+		/*WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@name='formCategoryId'][@id='formCategoryId']")));*/
 		category.selectByVisibleText(DataproviderFactory.getScPages().getData("TestData", 8, 3));
 		SavePage.click();
 	}
 
 	public void aboutUsPage() {
 		AboutusPage.click();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		Title.sendKeys(DataproviderFactory.getExcel().getData("Sheet1", 5, 1));
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
+		Title.sendKeys(DataproviderFactory.getScPages().getData("TestData", 11, 0));
+		SavePage.click();
+		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+		driver.switchTo().alert().accept();
+		Url.sendKeys(DataproviderFactory.getScPages().getData("TestData", 11, 1));
+		Select Deaprtment = new Select(Departments);
+		Deaprtment.selectByVisibleText(DataproviderFactory.getScPages().getData("TestData", 11, 2));
+		driver.switchTo().frame("idContent_editorobj1");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		Url.sendKeys(DataproviderFactory.getExcel().getData("Sheet1", 5, 2));
+		EditorBody.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		Select dropdown = new Select(driver.findElement(By.cssSelector("Deaprtments")));
-		dropdown.selectByVisibleText(DataproviderFactory.getExcel().getData("Sheet1", 5, 3));
+		EditorBody.sendKeys(DataproviderFactory.getScPages().getData("TestData", 11, 3));
+		driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		ResponsiveContent.sendKeys(DataproviderFactory.getExcel().getData("Sheet1", 5, 4));
 		SavePage.click();
 	}
 

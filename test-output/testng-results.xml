@@ -1,81 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="1" total="12" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="54057" started-at="2018-06-12T06:06:28Z" finished-at="2018-06-12T06:07:22Z">
+  <suite name="Pages" duration-ms="161505" started-at="2018-06-13T13:00:42Z" finished-at="2018-06-13T13:03:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54057" started-at="2018-06-12T06:06:28Z" finished-at="2018-06-12T06:07:22Z">
-      <class name="sc.pages.testcases.ContentPage">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:sc.pages.testcases.ContentPage@204f30ec]" name="setUp" is-config="true" duration-ms="118" started-at="2018-06-12T06:06:28Z" finished-at="2018-06-12T06:06:28Z">
+    <test name="AddPages" duration-ms="161505" started-at="2018-06-13T13:00:42Z" finished-at="2018-06-13T13:03:23Z">
+      <class name="com.sc.pages.testcases.AddPages">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="setUp" is-config="true" duration-ms="119" started-at="2018-06-13T13:00:42Z" finished-at="2018-06-13T13:00:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginSc()[pri:1, instance:sc.pages.testcases.ContentPage@204f30ec]" name="loginSc" duration-ms="23755" started-at="2018-06-12T06:06:28Z" finished-at="2018-06-12T06:06:52Z">
+        <test-method status="PASS" signature="loginSc()[pri:1, instance:com.sc.pages.testcases.AddPages@754ba872]" name="loginSc" duration-ms="23112" started-at="2018-06-13T13:00:42Z" finished-at="2018-06-13T13:01:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSc -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sc.pages.testcases.ContentPage@204f30ec]" name="getResult" is-config="true" duration-ms="3" started-at="2018-06-12T06:06:52Z" finished-at="2018-06-12T06:06:52Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="getResult" is-config="true" duration-ms="2" started-at="2018-06-13T13:01:05Z" finished-at="2018-06-13T13:01:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginSc status=SUCCESS method=ContentPage.loginSc()[pri:1, instance:sc.pages.testcases.ContentPage@204f30ec] output={null}]]]>
+                <![CDATA[[TestResult name=loginSc status=SUCCESS method=AddPages.loginSc()[pri:1, instance:com.sc.pages.testcases.AddPages@754ba872] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="contentPageAdd()[pri:2, instance:sc.pages.testcases.ContentPage@204f30ec]" name="contentPageAdd" duration-ms="9380" started-at="2018-06-12T06:06:52Z" finished-at="2018-06-12T06:07:01Z">
+        <test-method status="PASS" signature="contentPageAdd()[pri:2, instance:com.sc.pages.testcases.AddPages@754ba872]" name="contentPageAdd" duration-ms="11299" started-at="2018-06-13T13:01:05Z" finished-at="2018-06-13T13:01:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- contentPageAdd -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sc.pages.testcases.ContentPage@204f30ec]" name="getResult" is-config="true" duration-ms="1" started-at="2018-06-12T06:07:01Z" finished-at="2018-06-12T06:07:01Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="getResult" is-config="true" duration-ms="0" started-at="2018-06-13T13:01:16Z" finished-at="2018-06-13T13:01:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=contentPageAdd status=SUCCESS method=ContentPage.contentPageAdd()[pri:2, instance:sc.pages.testcases.ContentPage@204f30ec] output={null}]]]>
+                <![CDATA[[TestResult name=contentPageAdd status=SUCCESS method=AddPages.contentPageAdd()[pri:2, instance:com.sc.pages.testcases.AddPages@754ba872] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="campaignPageAdd()[pri:3, instance:sc.pages.testcases.ContentPage@204f30ec]" name="campaignPageAdd" duration-ms="11047" started-at="2018-06-12T06:07:01Z" finished-at="2018-06-12T06:07:12Z">
+        <test-method status="PASS" signature="campaignPageAdd()[pri:3, instance:com.sc.pages.testcases.AddPages@754ba872]" name="campaignPageAdd" duration-ms="25278" started-at="2018-06-13T13:01:16Z" finished-at="2018-06-13T13:01:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- campaignPageAdd -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sc.pages.testcases.ContentPage@204f30ec]" name="getResult" is-config="true" duration-ms="0" started-at="2018-06-12T06:07:12Z" finished-at="2018-06-12T06:07:12Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="getResult" is-config="true" duration-ms="0" started-at="2018-06-13T13:01:42Z" finished-at="2018-06-13T13:01:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=campaignPageAdd status=SUCCESS method=ContentPage.campaignPageAdd()[pri:3, instance:sc.pages.testcases.ContentPage@204f30ec] output={null}]]]>
+                <![CDATA[[TestResult name=campaignPageAdd status=SUCCESS method=AddPages.campaignPageAdd()[pri:3, instance:com.sc.pages.testcases.AddPages@754ba872] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="specialPageAdd()[pri:4, instance:sc.pages.testcases.ContentPage@204f30ec]" name="specialPageAdd" duration-ms="9855" started-at="2018-06-12T06:07:12Z" finished-at="2018-06-12T06:07:22Z">
+        <test-method status="PASS" signature="specialPageAdd()[pri:4, instance:com.sc.pages.testcases.AddPages@754ba872]" name="specialPageAdd" duration-ms="15583" started-at="2018-06-13T13:01:42Z" finished-at="2018-06-13T13:01:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- specialPageAdd -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sc.pages.testcases.ContentPage@204f30ec]" name="getResult" is-config="true" duration-ms="0" started-at="2018-06-12T06:07:22Z" finished-at="2018-06-12T06:07:22Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="getResult" is-config="true" duration-ms="0" started-at="2018-06-13T13:01:57Z" finished-at="2018-06-13T13:01:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=specialPageAdd status=SUCCESS method=ContentPage.specialPageAdd()[pri:4, instance:sc.pages.testcases.ContentPage@204f30ec] output={null}]]]>
+                <![CDATA[[TestResult name=specialPageAdd status=SUCCESS method=AddPages.specialPageAdd()[pri:4, instance:com.sc.pages.testcases.AddPages@754ba872] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:sc.pages.testcases.ContentPage@204f30ec]" name="tearDown" is-config="true" duration-ms="184" started-at="2018-06-12T06:07:22Z" finished-at="2018-06-12T06:07:22Z">
+        <test-method status="PASS" signature="aboutusPageAdd()[pri:5, instance:com.sc.pages.testcases.AddPages@754ba872]" name="aboutusPageAdd" duration-ms="48130" started-at="2018-06-13T13:01:57Z" finished-at="2018-06-13T13:02:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aboutusPageAdd -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="getResult" is-config="true" duration-ms="1" started-at="2018-06-13T13:02:45Z" finished-at="2018-06-13T13:02:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=aboutusPageAdd status=SUCCESS method=AddPages.aboutusPageAdd()[pri:5, instance:com.sc.pages.testcases.AddPages@754ba872] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:6, instance:com.sc.pages.testcases.AddPages@754ba872]" name="tearDown" duration-ms="835" started-at="2018-06-13T13:02:45Z" finished-at="2018-06-13T13:02:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- sc.pages.testcases.ContentPage -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.sc.pages.testcases.AddPages@754ba872]" name="getResult" is-config="true" duration-ms="1" started-at="2018-06-13T13:02:46Z" finished-at="2018-06-13T13:02:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tearDown status=SUCCESS method=AddPages.tearDown()[pri:6, instance:com.sc.pages.testcases.AddPages@754ba872] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+      </class> <!-- com.sc.pages.testcases.AddPages -->
+      <class name="com.frontend.pages.testcases.FrontendPages">
+        <test-method status="PASS" signature="siteUrl()[pri:7, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="siteUrl" duration-ms="24233" started-at="2018-06-13T13:02:46Z" finished-at="2018-06-13T13:03:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- siteUrl -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="getResult" is-config="true" duration-ms="1" started-at="2018-06-13T13:03:10Z" finished-at="2018-06-13T13:03:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=siteUrl status=SUCCESS method=FrontendPages.siteUrl()[pri:7, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="contentPage()[pri:8, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="contentPage" duration-ms="5175" started-at="2018-06-13T13:03:10Z" finished-at="2018-06-13T13:03:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contentPage -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="getResult" is-config="true" duration-ms="0" started-at="2018-06-13T13:03:15Z" finished-at="2018-06-13T13:03:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=contentPage status=SUCCESS method=FrontendPages.contentPage()[pri:8, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="campaignPage()[pri:9, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="campaignPage" duration-ms="3177" started-at="2018-06-13T13:03:15Z" finished-at="2018-06-13T13:03:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- campaignPage -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="getResult" is-config="true" duration-ms="1" started-at="2018-06-13T13:03:19Z" finished-at="2018-06-13T13:03:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=campaignPage status=SUCCESS method=FrontendPages.campaignPage()[pri:9, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="specialPage()[pri:10, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="specialPage" duration-ms="3769" started-at="2018-06-13T13:03:19Z" finished-at="2018-06-13T13:03:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- specialPage -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="getResult" is-config="true" duration-ms="1" started-at="2018-06-13T13:03:22Z" finished-at="2018-06-13T13:03:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=specialPage status=SUCCESS method=FrontendPages.specialPage()[pri:10, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:11, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="tearDown" duration-ms="874" started-at="2018-06-13T13:03:22Z" finished-at="2018-06-13T13:03:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac]" name="getResult" is-config="true" duration-ms="2" started-at="2018-06-13T13:03:23Z" finished-at="2018-06-13T13:03:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=tearDown status=SUCCESS method=FrontendPages.tearDown()[pri:11, instance:com.frontend.pages.testcases.FrontendPages@146ba0ac] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+      </class> <!-- com.frontend.pages.testcases.FrontendPages -->
+    </test> <!-- AddPages -->
+  </suite> <!-- Pages -->
 </testng-results>

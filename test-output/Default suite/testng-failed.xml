@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sc.pages.testcases.ContentPage">
+      <class name="com.sc.pages.testcases.AddPages">
         <methods>
-          <include name="specialPageAdd"/>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="getResult"/>
+          <include name="contentPageAdd"/>
         </methods>
-      </class> <!-- sc.pages.testcases.ContentPage -->
+      </class> <!-- com.sc.pages.testcases.AddPages -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

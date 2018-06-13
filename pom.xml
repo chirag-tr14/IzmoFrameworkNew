@@ -90,6 +90,7 @@
  
 <suiteXmlFiles>
 <suiteXmlFile>pricerule.xml</suiteXmlFile>
+<suiteXmlFile>pricerule.xml</suiteXmlFile>
 </suiteXmlFiles>
  
 </configuration>
