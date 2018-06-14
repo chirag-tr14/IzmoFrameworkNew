@@ -89,8 +89,7 @@
 <configuration>
  
 <suiteXmlFiles>
-<suiteXmlFile>pricerule.xml</suiteXmlFile>
-<suiteXmlFile>pages.xml</suiteXmlFile>
+<suiteXmlFile>suite.xml</suiteXmlFile>
 </suiteXmlFiles>
  
 </configuration>
