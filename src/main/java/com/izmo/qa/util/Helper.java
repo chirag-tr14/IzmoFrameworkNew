@@ -40,6 +40,20 @@ public class Helper
 		String fileName=result.getName()+ "_" + dateformat.format(date);
 		return fileName;
 	}*/
+	
+	
+	public static void WaitFor(long Seconds)
+	{
+		long miliseconds;
+		try
+		{
+			miliseconds=Seconds*1;
+			Thread.sleep(miliseconds);
+		} catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
 	
 

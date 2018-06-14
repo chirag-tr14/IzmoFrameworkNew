@@ -16,7 +16,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.izmo.qa.factory.DataproviderFactory;
+
 
 public class ExtentReporterNG {
 
@@ -38,7 +38,8 @@ public class ExtentReporterNG {
 
 	@BeforeSuite
 	public void setUp() {
-		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("F:\\IZMO FrameWork\\com.izomweb.com\\Reports\\PriceRuleAdd.html");
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter
+				("F:\\IZMO FrameWork\\com.izomweb.com\\Reports\\Reports.html");
 		report = new ExtentReports();
 		report.attachReporter(htmlReporter);
 
@@ -48,7 +49,7 @@ public class ExtentReporterNG {
 		report.setSystemInfo("User Name", "Rajesh");
 
 		htmlReporter.config().setChartVisibilityOnOpen(true);
-		htmlReporter.config().setDocumentTitle(" PriceRule Report");
+		htmlReporter.config().setDocumentTitle(" Extent Report");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 				
@@ -85,4 +86,7 @@ public class ExtentReporterNG {
 	public void tearDown() {
 		report.flush();
 	}
+	
+	
+	
 }

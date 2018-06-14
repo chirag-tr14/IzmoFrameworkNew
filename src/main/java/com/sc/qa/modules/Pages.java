@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.izmo.qa.factory.DataproviderFactory;
+import com.izmo.qa.util.Helper;
 
 public class Pages
 
@@ -108,7 +109,7 @@ public class Pages
 		SavePage.click();
 	}
 
-	public void campaignPage() throws InterruptedException {
+	public void campaignPage() {
 		CampignPage.click();
 		
 		SavePage.click();
@@ -131,7 +132,7 @@ public class Pages
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 		driver.switchTo().alert().accept();
 		
-		Thread.sleep(2000);
+		Helper.WaitFor(100);
 		Select category = new Select(FormCategory);
 		/*WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@name='formCategoryId'][@id='formCategoryId']")));*/
@@ -149,7 +150,7 @@ public class Pages
 		SavePage.click();
 	}
 
-	public void specialPage() throws InterruptedException {
+	public void specialPage() {
 		SpecialPage.click();
 		SavePage.click();
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
@@ -171,7 +172,7 @@ public class Pages
 		driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 		driver.switchTo().alert().accept();
 		
-		Thread.sleep(2000);
+		Helper.WaitFor(100);
 		Select category = new Select(FormCategory);
 		/*WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@name='formCategoryId'][@id='formCategoryId']")));*/

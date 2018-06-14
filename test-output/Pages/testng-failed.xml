@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Pages]">
+  <test thread-count="5" name="AddPages(failed)">
+    <classes>
+      <class name="com.sc.pages.testcases.AddPages">
+        <methods>
+          <include name="setUp"/>
+          <include name="aboutusPageAdd"/>
+          <include name="specialPageAdd"/>
+          <include name="getResult"/>
+          <include name="contentPageAdd"/>
+          <include name="loginSc"/>
+          <include name="campaignPageAdd"/>
+        </methods>
+      </class> <!-- com.sc.pages.testcases.AddPages -->
+      <class name="com.frontend.pages.testcases.FrontendPages">
+        <methods>
+          <include name="setUp"/>
+          <include name="campaignPage"/>
+          <include name="getResult"/>
+          <include name="siteUrl"/>
+          <include name="contentPage"/>
+          <include name="specialPage"/>
+        </methods>
+      </class> <!-- com.frontend.pages.testcases.FrontendPages -->
+    </classes>
+  </test> <!-- AddPages(failed) -->
+</suite> <!-- Failed suite [Pages] -->
